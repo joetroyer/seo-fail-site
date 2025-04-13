@@ -1,18 +1,28 @@
-<!DOCTYPE html>
+<!-- Intentionally broken SEO test page -->
 <html>
 <head>
-    <!-- Missing title and meta description on purpose -->
+    <!-- 🚨 Missing title and meta description on purpose -->
     <script src="scripts/unused.js"></script>
     <script src="http://www.example.com/tracker.js"></script>
+    <!-- 🚫 No viewport meta tag -->
 </head>
 <body>
     <div style="width:1200px; font-size:10px;">
-        <h2>Section Title</h2>
+        <h2>Section Title (no h1 on purpose)</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-        <a href="missing-page.html">Broken Link</a>
-        <a href="page2.html">Page 2</a>
+
+        <!-- ✅ SEO-failing links -->
+        <a href="missing-page.html">Broken Link</a><br>
+        <a href="page2.html">Visit Page 2</a><br>
+        <a href="page3.html">Visit Page 3</a> <!-- ✅ new link added -->
+
+        <!-- 🚫 Missing alt text and broken image -->
         <img src="images/missing.jpg">
+        <!-- 🚫 Missing alt text and oversized image -->
         <img src="images/large.jpg">
+
+        <!-- 🔥 Intentionally ugly layout -->
+        <p style="font-size:8px;">This page is full of intentional SEO issues for testing purposes.</p>
     </div>
 </body>
 </html>
